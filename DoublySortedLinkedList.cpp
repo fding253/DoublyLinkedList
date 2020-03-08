@@ -89,23 +89,26 @@ public:
 		addNode(inputName, stoi(inputWeight));
 	};
 
-	// === TESTING HELPERS ===
+	// Print names and weights sorted by name
 	void printLLByName() {
 		Node* curr = headName;
 
+		cout << "Names and weights sorted by weight: ";
 		while (curr != nullptr) {
-			cout << curr->name << "\t";
+			cout << curr->name << " - " << curr->weight << ", ";
 			curr = curr->nextName;
 		}
 
 		cout << endl;
 	};
 
+	// Print names and weights sorted by weight
 	void printLLByWeight() {
 		Node* curr = headWeight;
 
+		cout << "Names and weights sorted by weight: ";
 		while (curr != nullptr) {
-			cout << curr->weight << "\t";
+			cout << curr->name << " - " << curr->weight << ", ";
 			curr = curr->nextWeight;
 		}
 
@@ -119,12 +122,8 @@ int main() {
 
 	for (int i = 0; i < 15; i++) {
 		LL->readInput();
-
-		// TESTING
-
-		//cout << " Sorted Names: " << endl;
-		//LL->printLLByName();
-		//cout << " Sorted Weights: " << endl;
-		//LL->printLLByWeight();
 	}
+
+	LL->printLLByName();
+	LL->printLLByWeight();
 }
